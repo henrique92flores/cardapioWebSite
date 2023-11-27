@@ -1,0 +1,27 @@
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px; /* Adicione esta linha para criar espaço entre os cards */
+    margin-top: 40px; /* Adicione esta linha para criar espaço entre os cards */
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #fddbb4; /* Laranja claro */
+}
+
+button {
+    background-color: bisque;
+    color: #f2745f;
+    border-color: bisque;
+    font-weight: bold;
+    bottom: 16px;
+    right: 24px;
+    transition: all 0.1s linear 0.1s;
+}

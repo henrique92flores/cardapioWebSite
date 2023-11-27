@@ -1,0 +1,12 @@
+.Container {
+    flex-direction: column;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: #fddbb4; /* Laranja claro */
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    margin-left: 250px;
+}

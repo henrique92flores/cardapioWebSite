@@ -1,0 +1,33 @@
+.modal-body {
+    padding-block:4px 7px;
+    max-width: 80%;
+    max-height: 100vh; /* Defina a altura máxima do modal em relação à altura da viewport */
+    overflow-y: auto;
+}
+
+.mini-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    font-size: 1.5rem;
+}
+
+/* Adicione um estilo para a barra de rolagem, se necessário */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+.modal-body h2 {
+    /*/max-width: 80%; /* ou ajuste conforme necessário */
+    /*margin-bottom: 15px; /* ou ajuste conforme necessário */
+}
+.moda-novoItem {
+    max-width: 30%;
+    margin-top: 380px; /* ou ajuste conforme necessário */
+}

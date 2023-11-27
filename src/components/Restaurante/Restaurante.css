@@ -1,0 +1,18 @@
+.Restaurante {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: rgb(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 0;
+    margin-right: 20px; /* Adicione esta linha para criar espaço entre os cards */
+    margin-top: 20px;
+}
+
+    .Restaurante img {
+        border-radius: 8px 8px 0 0;
+        width: 250px;
+        height: 250px;
+    }

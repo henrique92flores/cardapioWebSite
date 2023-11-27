@@ -1,0 +1,55 @@
+.Titulo {
+    background-color:bisque;
+    position: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--cinza);
+}
+
+.cart-container {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color :antiquewhite;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-left: 20px; /* Adicione esta linha para criar espaço entre os cards */
+    margin-right: 20px; /* Adicione esta linha para criar espaço entre os cards */
+    margin-bottom: 20px;
+}
+
+
+.cart-items {
+    flex: 1;
+    padding: 10px;
+    align-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+
+}
+    .cart-items li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px; 
+    }
+
+        .cart-items li span {
+            margin-right: 10px; 
+        }
+           
+            .cart-items li span:last-child {
+                display: flex;
+                align-items: center;
+            }
+
+
+        .cart-items li button {
+            background-color: bisque;
+            color: #f2745f;
+            border-color:bisque;
+            margin-right: 5px; /* Ou qualquer valor desejado para o espaçamento horizontal entre os botões */
+        }
+
