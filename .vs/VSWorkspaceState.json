@@ -3,13 +3,13 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\interface",
     "\\src\\pages",
-    "\\src\\pages\\Admin",
     "\\src\\pages\\Admin\\Food",
     "\\src\\pages\\Admin\\Restautante",
-    "\\src\\pages\\Carrinho",
+    "\\src\\pages\\Cadastro",
+    "\\src\\pages\\Login",
     "\\src\\pages\\Restaurante"
   ],
+  "SelectedNode": "\\src\\pages\\Cadastro\\index.tsx",
   "PreviewInSolutionExplorer": false
 }
