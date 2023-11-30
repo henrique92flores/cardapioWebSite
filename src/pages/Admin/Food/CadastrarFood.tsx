@@ -9,7 +9,7 @@ const API_URL = 'https://localhost:7260';
 
 function CadastrarFood() {
     const parametros = useParams()
-    const [food, setFood] = useState<IFood | undefined>(undefined);
+    const [, setFood] = useState<IFood | undefined>(undefined);
     const [titulo, setTitulo] = useState('');
     const [description, setDescription] = useState('');
     const [imagem, setImagem] = useState('');
@@ -38,7 +38,7 @@ function CadastrarFood() {
             description,
         };
         try {
-            axios.post<IFood[]>(API_URL + '/Food', dadosDoPrato)
+            axios.post<IFood | undefined>(API_URL + '/Food', dadosDoPrato)
                 .then(resposta => {
                     setFood(resposta.data)
                     if (resposta.status == 201) {

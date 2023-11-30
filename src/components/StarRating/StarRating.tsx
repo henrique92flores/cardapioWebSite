@@ -1,7 +1,9 @@
 ﻿// StarRating.js
-import React from 'react';
+interface StarRatingProps {
+    nota: number; // Adicione um tipo explícito para 'nota'
+}
 
-const StarRating = ({ nota }) => {
+const StarRating: React.FC<StarRatingProps> = ({ nota }) => {
     const renderStars = () => {
         const stars = [];
         for (let i = 0; i < nota; i++) {

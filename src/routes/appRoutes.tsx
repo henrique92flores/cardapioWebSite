@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "../pages/dashboard";
 import PaginaBase from "../pages/PaginaBase";
 import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
@@ -35,7 +34,6 @@ function AppRoutes() {
                     <Route path="/cadastro" element={<Cadastro />} />
                     <Route element={<RotaPrivada />}>
                         <Route path="/home" element={<Home />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/pesquisa" element={<Pesquisa />} />
                         <Route path="/historico" element={<Historico />} />
                         <Route path="/detalhes/:id" element={<Detalhes />} />

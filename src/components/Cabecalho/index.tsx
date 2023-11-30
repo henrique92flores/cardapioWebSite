@@ -3,7 +3,7 @@ import logo from './assets/Logo_LoveFood.jpg';
 import pesquisa from './assets/pesquisa.png';
 import perfil from './assets/perfil.png';
 import autenticaStore from '../../store/autentica.store';
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 
 const CabecalhoEstilizado = styled.header`
     display:flex;
@@ -87,7 +87,7 @@ function Cabecalho() {
     //}, []);
 
     useEffect(() => {
-        const disposer = autenticaStore.registrarObservadorAutenticacao((isAutenticado, usuario) => {
+        const disposer = autenticaStore.registrarObservadorAutenticacao((isAutenticado: boolean | ((prevState: boolean) => boolean), usuario: { tipoUser: SetStateAction<number>; }) => {
             setIsAutenticado(isAutenticado);
             setUserTipo(usuario.tipoUser);
         });

@@ -82,7 +82,6 @@ export default function Cadastro() {
         }
         try {
             cadastrarDados({ url: 'User', dados: user });
-            console.log('tipocliente', tipocliente);
         } catch(erro) {
             erro && alert('erro ao cadastrar os dados')
         }
@@ -134,9 +133,9 @@ export default function Cadastro() {
                     required={true}
                 />
                 <select value={tipocliente} onChange={(e) => setTipocliente(parseInt(e.target.value))}>
-                    <option value="">Selecione uma tag</option>
+                    <option key="" value="">Selecione uma tag</option>
                     {Object.entries(Tags)
-                        .filter(([key, value]) => value === Tags.Cliente || value === Tags.Fornecedor)
+                        .filter(([key, value]) => key === "" && (value === Tags.Cliente || value === Tags.Fornecedor))
                         .map(([key, value]) => (
                             <option key={key} value={value}>
                                 {key}

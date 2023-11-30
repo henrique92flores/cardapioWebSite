@@ -1,4 +1,5 @@
 import { makeObservable, observable, action, autorun } from "mobx";
+import { SetStateAction } from "react";
 
 interface IUsuario {
     id?:number,
@@ -36,7 +37,7 @@ class AutenticaStore {
         });
     }
 
-    registrarObservadorAutenticacao(callback) {
+    registrarObservadorAutenticacao(callback: { (isAutenticado: boolean | ((prevState: boolean) => boolean), usuario: { tipoUser: SetStateAction<number>; }): void; (arg0: boolean, arg1: IUsuario): void; }) {
         return autorun(() => {
             callback(this.estaAutenticado, this.usuario);
         });

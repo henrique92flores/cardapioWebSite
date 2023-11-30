@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import usePost from '../../hooks/usePost';
@@ -93,7 +94,7 @@ const Input = ({ label, tipo, value, updateValue, required }: InputProps) => {
 }
 
 export default function Login() {
-    const [id, setId] = useState();
+    const [id] = useState();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [mostraErro, setMostraErro] = useState(false);

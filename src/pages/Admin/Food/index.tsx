@@ -64,7 +64,7 @@ function AdminFood() {
                         <td>{food.titulo}</td>
                         <td>{food.description}</td>
                         <td>{food.preco}</td>
-                        <td>{food.tagsDescription}</td>
+                        <td>{food.tagsId}</td>
                         <td>
                             [<a href={food.imagem} target="_blank" rel="noreferrer">Ver Imagem</a>]
                         </td>

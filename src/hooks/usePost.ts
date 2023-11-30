@@ -1,9 +1,20 @@
 import { useState } from "react";
 
+interface PostResult {
+    erro: string;
+    sucesso: boolean;
+    resposta: string;
+    usertype: number; // Adicione a propriedade usertype
+}
+
+
 export default function usePost() {
-    const [erro, setErro] = useState('');
-    const [sucesso, setSucesso] = useState(false);
-    const [resposta, setResposta] = useState('');
+    const [resultado, setResultado] = useState<PostResult>({
+        erro: '',
+        sucesso: false,
+        resposta: '',
+        usertype: 0, // Inicialize com um valor padrão, se aplicável
+    });
 
     async function cadastrarDados<T>({ url, dados, token }: { url: string, dados: T, token?: string }) {
         try {
@@ -22,22 +33,27 @@ export default function usePost() {
 
             const respostaConvertida = await resposta.json();
             if (respostaConvertida.token != null) {
-                setSucesso(true);
-                setResposta(respostaConvertida.token);
+                setResultado({
+                    erro: '',
+                    sucesso: true,
+                    resposta: respostaConvertida.token,
+                    usertype: respostaConvertida.tipoUser,
+                });
                 localStorage.setItem('token', respostaConvertida.token);
                 localStorage.setItem('autenticacao', JSON.stringify({ autenticado: true, tipoUser: respostaConvertida.tipoUser, userId: respostaConvertida.userId }));
             } else {
-                setErro(`Erro ${respostaConvertida}: ${resposta.statusText}`);
-                setSucesso(false);
-                console.log("ola");
-                console.log(respostaConvertida);
+                setResultado({
+                    erro: `Erro ${respostaConvertida}: ${resposta.statusText}`,
+                    sucesso: false,
+                    resposta: '',
+                    usertype: 0, 
+                });
             }
         }
         catch (erro) {
 
-            console.log("oi");
-            //setErro('Não foi possível enviar os dados');
+            console.log("Não foi possível enviar os dados'");
         }
     }
-    return { cadastrarDados, sucesso, erro, resposta }
+    return { cadastrarDados, ...resultado };
 }

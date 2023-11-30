@@ -38,8 +38,8 @@ const Pesquisa: React.FC = () => {
             <h1>Historico de Pedidos do Usuario</h1>
             <h2>Selecione um range de data para buscar os pedidos</h2>
         <div>
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date as Date)} />
-            <DatePicker selected={endDate} onChange={(date) => setEndDate(date as Date)} />
+            <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date as Date)} />
+            <DatePicker selected={endDate} onChange={(date: Date) => setEndDate(date as Date)} />
             <button onClick={handleSearch}>Pesquisar</button>
         </div>
         <div className='Tabel-resultado'>

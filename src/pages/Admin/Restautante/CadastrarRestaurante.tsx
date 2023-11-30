@@ -1,23 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import axios from 'axios';
 
-import ITag from '../../../components/interface/ITag';
 import CampoDigitacao from '../../../components/CampoDigitacao';
 import { IRestaurant } from '../../../components/interface/IRestaurant';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-interface InitalProps {
-        titulo: string;
-        description: string;
-        preco: number;
-        tagsId: number;
-        imagem: string;
-}
+
 
 function CadastrarRestaurante() {
-    const parametros = useParams()
-    const [restaurante, setRestaurante] = useState<IRestaurant>()
+    const [, setRestaurante] = useState<IRestaurant>()
 
 
     const [nome, setNome] = useState('');
@@ -29,7 +21,6 @@ function CadastrarRestaurante() {
     const [numero, setNumero] = useState(0);
     const [complemento, setComplemento] = useState('');
     const [estado, setEstado] = useState('');
-    const [resposta, setResposta] = useState('');
     const navigate = useNavigate();
     const API_URL = 'https://localhost:7260';
 
@@ -55,7 +46,7 @@ function CadastrarRestaurante() {
             }
         };
         try {
-            axios.post<IRestaurant[]>(API_URL + `/Restaunt`, dadosDoRestaurante)
+            axios.post<IRestaurant | undefined>(API_URL + `/Restaunt`, dadosDoRestaurante)
                 .then(resposta => {
                     setRestaurante(resposta.data)
                     if (resposta.status == 200) {

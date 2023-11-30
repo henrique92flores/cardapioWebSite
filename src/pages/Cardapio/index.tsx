@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -39,7 +40,7 @@ const Cardapio = () => {
         const existingItem = order.orderItemDto.find(item => item.id === product.id);
         const dadosAutenticacao = localStorage.getItem('autenticacao');
         if (dadosAutenticacao) {
-            const { autenticado, tipoUser, userId } = JSON.parse(dadosAutenticacao);
+            const { userId } = JSON.parse(dadosAutenticacao);
             setUserId(userId);
         }
 
@@ -88,7 +89,6 @@ const Cardapio = () => {
             {
                 if (resposta.status == 201) {
                     setRedirecionar(true);
-                    console.log("resposta true");
                 } 
                 setOrder(resposta.data);
 
@@ -111,7 +111,7 @@ const Cardapio = () => {
                         price={data.preco}
                         title={data.titulo}
                         image={data.imagem}
-                        tagsDescription={data.tagsDescription}
+                        tagsDescription={data.tagsId}
                         description={data.description}
                         onAddToCart={() => handleAddToCart(data)}
                     />,

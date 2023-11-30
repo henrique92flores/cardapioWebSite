@@ -9,7 +9,7 @@ interface CardProps {
     price: number;
     title: string;
     image: string;
-    tagsDescription: string
+    tagsDescription: number
     description: string;
     onAddToCart: (product: { title: string; price: number }) => void;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import Cart from '../../components/Cart/cart';
 import axios from 'axios';
@@ -78,7 +79,6 @@ function Carrinho() {
 
     useEffect(() => {
         setOrder(order);
-        console.log('order', order)
     }, [order]);
 
     useEffect(() => {
@@ -111,7 +111,6 @@ function Carrinho() {
                     if (resposta.status == 200) {
                         setStatus(true);
                         alert("Ordem Paga com Sucesso")
-                        console.log(resposta);
                     }
                     else if (resposta.status == 400){
                         console.log(finalOrder);
@@ -119,7 +118,6 @@ function Carrinho() {
                 });
         } catch (erro) {
             erro && alert("Erro ao salvar Ordem")
-            console.log(finalOrder);
         }
     }
 

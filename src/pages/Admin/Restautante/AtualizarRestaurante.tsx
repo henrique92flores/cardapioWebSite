@@ -61,7 +61,7 @@ function AtualizarRestaurante() {
             }
         };
         try {
-            axios.put<IRestaurant[]>(API_URL + `/Restaunt/${parametros.id}`, dadosDoRestaurante)
+            axios.put<IRestaurant | undefined>(API_URL + `/Restaunt/${parametros.id}`, dadosDoRestaurante)
                 .then(resposta => {
                     setRestaurante(resposta.data)
                 if (resposta.status == 200) {

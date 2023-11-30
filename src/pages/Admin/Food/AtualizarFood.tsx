@@ -55,7 +55,7 @@ function AtualizarFood() {
             tagsId: tagsId || 0,
         };
         try {
-            axios.put<IFood[]>(API_URL + `/Food/${parametros.id}`, dadosDoRestaurante)
+            axios.put<IFood | undefined>(API_URL + `/Food/${parametros.id}`, dadosDoRestaurante)
                 .then(resposta => {
                     setFood(resposta.data)
                     if (resposta.status == 200) {

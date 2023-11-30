@@ -5,7 +5,7 @@ export default function usePostuseRestaurant2() {
     const [sucesso, setSucesso] = useState(false);
     const [resposta, setResposta] = useState('');
 
-    async function cadastrarDados<T>({ url, dados, token }: { url: string, dados: T, token?: string }) {
+    async function cadastrarDados<T>({ url, dados }: { url: string, dados: T, token?: string }) {
         try {
             const headers: HeadersInit = {
                 'Content-Type': 'application/json'

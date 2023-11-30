@@ -45,8 +45,6 @@ const Historico: React.FC = () => {
                 setMessage("Numero de registros encontrados: " + (response.data.length+1))
             }
 
-            console.log('message: ', message);
-            console.log('Dados da API:', response.data);
 
         } catch (error) {
             console.error('Erro ao chamar a API:', error);
@@ -62,7 +60,7 @@ const Historico: React.FC = () => {
             <div>
                 <DatePicker
                     selected={startDate}
-                    onChange={(date) => setStartDate(date as Date)}
+                    onChange={(date: Date) => setStartDate(date as Date)}
                     showTimeSelect
                     timeFormat="HH:mm"
                     timeIntervals={15}
@@ -70,7 +68,7 @@ const Historico: React.FC = () => {
                 />
                 <DatePicker
                     selected={endDate}
-                    onChange={(date) => setEndDate(date as Date)}
+                    onChange={(date: Date) => setEndDate(date as Date)}
                     showTimeSelect
                     timeFormat="HH:mm"
                     timeIntervals={60}

@@ -8,7 +8,7 @@ interface RestaurantePorps {
     cnpj: string,
     addresDto?: string
 }
-export function Restaurante({ id, nome, nomeFantasia, imagem, cnpj, addresDto }: RestaurantePorps) {
+export function Restaurante({ id, nome, nomeFantasia, imagem, cnpj }: RestaurantePorps) {
 
     return (
         <div className="Restaurante">
