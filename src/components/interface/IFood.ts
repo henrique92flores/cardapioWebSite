@@ -5,5 +5,6 @@ export interface IFood {
     imagem: string,
     preco: number,
     tagsId: number,
+    tagsDescription:string,
     description: string
 }

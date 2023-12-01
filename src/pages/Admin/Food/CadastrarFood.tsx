@@ -36,6 +36,7 @@ function CadastrarFood() {
             preco,
             tagsId,
             description,
+            tagsDescription: ''
         };
         try {
             axios.post<IFood | undefined>(API_URL + '/Food', dadosDoPrato)

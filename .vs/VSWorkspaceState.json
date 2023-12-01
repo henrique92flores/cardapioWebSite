@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
     "\\src\\components",
+    "\\src\\components\\Avaliacoes",
+    "\\src\\components\\create-modal",
+    "\\src\\components\\Rating",
+    "\\src\\components\\SelecionarData",
+    "\\src\\components\\StarRating",
+    "\\src\\hooks",
     "\\src\\pages",
-    "\\src\\pages\\Admin\\Food",
-    "\\src\\pages\\Admin\\Restautante",
-    "\\src\\pages\\Cadastro",
-    "\\src\\pages\\Login",
-    "\\src\\pages\\Restaurante"
+    "\\src\\pages\\Carrinho"
   ],
-  "SelectedNode": "\\src\\pages\\Cadastro\\index.tsx",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

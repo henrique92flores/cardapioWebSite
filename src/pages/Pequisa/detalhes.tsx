@@ -1,14 +1,22 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Order from '../../components/interface/IOrder';
 import './detalhes.css'
+import { IRestaurant } from '../../components/interface/IRestaurant';
 const API_URL = 'https://localhost:7260';
 
 
 const Detalhes = () => {
     const [order, setOrder] = useState<Order>()
+    const [restaurante, setRestaurante] =  useState<IRestaurant | undefined>(undefined);
     const params = useParams();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get<IRestaurant>(API_URL + `/Restaunt/${order?.restaurantId}`)
+            .then(resposta => setRestaurante(resposta.data))
+    }, [order?.restaurantId])
 
     useEffect(() => {
         axios.get(API_URL + `/Orders/${params.id}`)
@@ -20,6 +28,7 @@ const Detalhes = () => {
     }, [])
 
     const handleBack = () => {
+        navigate('/pesquisa')
     };
 
     return (
@@ -35,24 +44,30 @@ const Detalhes = () => {
                 <b>Numero do Cartao:</b> {order?.numeroCartao}
             </p>
             <p>
-                <b>Numero do Cartao:</b> {order?.paymentType}
+                <b>Tipo de Pagamento:</b>{order?.paymentType == 0
+                    ? <> Cartao</>
+                    : <> Pix</>
+                }
             </p>
             <p>
-                <b>Restaurante Id: </b> {order?.restaurantId}
+                <b>Nome do Restaurante: </b> {restaurante?.nome }
             </p>
             <p>
-                <b>Status: </b> {order?.status}
+                <b>Status da Ordem:</b>{order?.status == 1
+                    ? <> Criado</>
+                    : <> Pago</>
+                }
             </p>
             <p>
-                <b>Valor Total R$: </b> {order?.total}
+                <b>Valor Total: R$ </b> {order?.total.toFixed(2)}
             </p>
             <div>
             <h2>Items do Pedido</h2>
                 {order?.orderItemDto.map((orderItem) => (
                     <p key={orderItem.id}>
                         <b>{orderItem.name}</b>
-                        <span> Preco :{orderItem.price}</span>
-                        <span> Quantidade :{orderItem.quantity}</span>
+                        <span> Preco: R$ {orderItem.price.toFixed(2)}</span>
+                        <span> Quantidade: {orderItem.quantity}</span>
                     </p>
                 ))}
             </div>

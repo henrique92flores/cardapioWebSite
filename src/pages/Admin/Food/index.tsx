@@ -63,8 +63,8 @@ function AdminFood() {
                         <tr key={food.id}>
                         <td>{food.titulo}</td>
                         <td>{food.description}</td>
-                        <td>{food.preco}</td>
-                        <td>{food.tagsId}</td>
+                        <td>R$: {food.preco.toFixed(2)}</td>
+                        <td>{food.tagsDescription}</td>
                         <td>
                             [<a href={food.imagem} target="_blank" rel="noreferrer">Ver Imagem</a>]
                         </td>

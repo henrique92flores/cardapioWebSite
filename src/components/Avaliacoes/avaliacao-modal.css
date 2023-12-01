@@ -1,33 +1,35 @@
+/* Estilo para o fundo cinza translúcido */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Coloca o overlay sobre outros elementos */
+}
+
+/* Estilo para o modal */
 .modal-body {
-    padding-block:4px 7px;
     max-width: 80%;
-    max-height: 100vh; /* Defina a altura máxima do modal em relação à altura da viewport */
-    overflow-y: auto;
+    background: #fff; /* Cor de fundo do modal */
+    padding: 20px;
+    z-index: 1001; /* Coloca o modal sobre o overlay */
+    border-radius: 8px; /* Borda arredondada, opcional */
 }
 
-.mini-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+/* Estilo para fechar o modal (opcional) */
+.btn-secondary {
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px; /* Ajuste conforme necessário */
 }
 
-.star-rating {
-    font-size: 1.5rem;
-}
-
-/* Adicione um estilo para a barra de rolagem, se necessário */
-.modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-    background-color: #888;
-}
-.modal-body h2 {
-    /*/max-width: 80%; /* ou ajuste conforme necessário */
-    /*margin-bottom: 15px; /* ou ajuste conforme necessário */
-}
+/* Estilo para o conteúdo do modal */
 .moda-novoItem {
-    max-width: 30%;
-    margin-top: 380px; /* ou ajuste conforme necessário */
+    text-align: center; /* Centraliza o conteúdo dentro do modal */
 }

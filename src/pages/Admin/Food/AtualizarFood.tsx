@@ -30,7 +30,9 @@ function AtualizarFood() {
         setDescription(food?.description || '');
         setImagem(food?.imagem || '');
         setPreco(food?.preco);
-        setTagsId(food?.tagsId);
+        setTagsId(tags.find(tag => tag.id === food?.tagsId)?.id);
+        setTagDescription(food?.tagsDescription || '');
+        console.log(food)
     }, [food]);
 
 
@@ -38,7 +40,8 @@ function AtualizarFood() {
     const [description, setDescription] = useState<string | undefined>(food?.description);
     const [imagem, setImagem] = useState<string | undefined>(food?.imagem);
     const [preco, setPreco] = useState<number | undefined>(food?.preco);
-    const [tagsId, setTagsId] = useState<number | undefined>(food?.tagsId);
+    const [tagsId, setTagsId] = useState<number | undefined>(food?.tagsId || 1);
+    const [tagsDescription, setTagDescription] = useState<string | undefined>(food?.tagsDescription || '');
     const navigate = useNavigate();
 
 
@@ -53,6 +56,7 @@ function AtualizarFood() {
             imagem: imagem || '',
             preco: preco || 0,
             tagsId: tagsId || 0,
+            tagsDescription: tagsDescription || ''
         };
         try {
             axios.put<IFood | undefined>(API_URL + `/Food/${parametros.id}`, dadosDoRestaurante)
@@ -110,7 +114,7 @@ function AtualizarFood() {
                     />
 
                 <select value={tagsId} onChange={(e) => setTagsId(parseInt(e.target.value, 10))}>
-                    <option value="">{tags[tagsId || 1].descricao}</option>
+                    <option value="">{tagsDescription}</option>
                     {tags.map((tag) => (
                         <option key={tag.id} value={tag.id}>
                             {tag.descricao}

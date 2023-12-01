@@ -54,7 +54,7 @@ export function ReviewModal({ restId, closeModal }: ModalProps) {
             .then(resposta => {
                 setReview(resposta.data);
             })
-    }, [])
+    }, [restId])
 
     return (
         <div className="modal-overlay">

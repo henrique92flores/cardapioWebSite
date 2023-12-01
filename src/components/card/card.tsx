@@ -26,7 +26,7 @@ export function Card({ price, image, description, title, tagsDescription, onAddT
                 <p>
                     <b>Categoria:</b> {tagsDescription}</p>
                 <p>
-                    <b>Valor:</b> {price}
+                    <b>Valor: R$</b> {price.toFixed(2)}
                 </p>
 
                     <BotaoCustomizado onClick={() => onAddToCart({ title, price })}>Adicionar ao Carrinho</BotaoCustomizado>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CampoDigitacao from "../../components/CampoDigitacao";
-import usePost from "../../hooks/usePost";
 import { useNavigate } from "react-router-dom";
 import IUser from "../../components/interface/IUser";
+import axios from "axios";
 
 const Titulo = styled.h2`
     padding: 0em 25em;
@@ -43,16 +43,9 @@ export default function Cadastro() {
     const [complemento, setComplemento] = useState('');
     const [estado, setEstado] = useState('');
     const [tipocliente, setTipocliente] = useState(0);
-    const { cadastrarDados, erro, sucesso } = usePost();
+    const API_URL = 'https://localhost:7260';
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (sucesso) {
-            alert("Usuario Criado com Sucesso")
-            navigate('/login');
-        } else if (erro != "") {
-            alert(erro)}
-    }, [sucesso]);
 
     enum Tags {
         Cliente = 1,
@@ -81,7 +74,14 @@ export default function Cadastro() {
 
         }
         try {
-            cadastrarDados({ url: 'User', dados: user });
+            axios.post<IUser | undefined>(API_URL + `/User`, user)
+                .then(resposta => {
+                    if (resposta.status == 200) {
+                        alert("Usuario Cadastrado com Sucesso")
+                        navigate('/login');
+                    }
+                });
+
         } catch(erro) {
             erro && alert('erro ao cadastrar os dados')
         }
@@ -135,7 +135,7 @@ export default function Cadastro() {
                 <select value={tipocliente} onChange={(e) => setTipocliente(parseInt(e.target.value))}>
                     <option key="" value="">Selecione uma tag</option>
                     {Object.entries(Tags)
-                        .filter(([key, value]) => key === "" && (value === Tags.Cliente || value === Tags.Fornecedor))
+                        .filter(([key, value]) => key === "" || value === Tags.Cliente || value === Tags.Fornecedor)
                         .map(([key, value]) => (
                             <option key={key} value={value}>
                                 {key}

@@ -5,7 +5,7 @@ export default function usePostuseRestaurant2() {
     const [sucesso, setSucesso] = useState(false);
     const [resposta, setResposta] = useState('');
 
-    async function cadastrarDados<T>({ url, dados }: { url: string, dados: T, token?: string }) {
+    async function cadastraroDados<T>({ url, dados }: { url: string, dados: T, token?: string }) {
         try {
             const headers: HeadersInit = {
                 'Content-Type': 'application/json'
@@ -27,5 +27,5 @@ export default function usePostuseRestaurant2() {
             setErro('Nao foi possivel enviar os dados');
         }
     }
-    return { cadastrarDados, sucesso, erro, resposta }
+    return { cadastraroDados, sucesso, erro, resposta }
 }
