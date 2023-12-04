@@ -12,7 +12,7 @@ import Modal from 'react-modal';
 const LoadingScreen: React.FC = () => {
     return (
         <div style={{ textAlign: 'center', padding: '20px' }}>
-            <img src='../src/assets/loading.gif' alt="Carregando..." />
+            <img src='/src/assets/loading.gif' alt="Carregando..." />
             <p>Carregando...</p>
         </div>
     );
@@ -151,7 +151,7 @@ function Carrinho() {
                             onChange={setNome}
                             required={true}
                         />
-                        <img src='../src/assets/websiteQRCode.png' alt="QRCode..." />
+                        <img src='/src/assets/websiteQRCode.png' alt="QRCode..." />
                         <p></p>
                         <button type="submit">Avisar Pagamento</button>
                     </form>

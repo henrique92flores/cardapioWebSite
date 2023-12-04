@@ -138,7 +138,7 @@ export default function Login() {
     return (
         <Container>
             <ImagemContainer>
-                <ImagemLogo src="../src/assets/Logo_LoveFood.jpg" alt="logo da empresa LoveFood" />
+                <ImagemLogo src="/src/assets/Logo_LoveFood.jpg" alt="logo da empresa LoveFood" />
             </ImagemContainer>
             <FormContainer>
                 <Formulario onSubmit={handleLogin}>
