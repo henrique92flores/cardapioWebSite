@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { IFood } from '../../../components/interface/IFood';
 import ITag from '../../../components/interface/ITag';
 
-const API_URL = 'https://localhost:7260';
+const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
 
 function CadastrarFood() {
     const parametros = useParams()

@@ -25,7 +25,7 @@ export default function usePost() {
                 headers['Authorization'] = `Bearer ${token}`;
             }
 
-            const resposta = await fetch(`https://localhost:7260/${url}`, {
+            const resposta = await fetch(`https://restaurante20231128222416.azurewebsites.net/${url}`, {
                 method: 'POST',
                 headers: headers, // Use os headers configurados
                 body: JSON.stringify(dados)

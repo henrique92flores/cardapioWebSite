@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\src",
     "\\src\\components",
-    "\\src\\components\\Avaliacoes",
-    "\\src\\components\\create-modal",
-    "\\src\\components\\Rating",
-    "\\src\\components\\SelecionarData",
-    "\\src\\components\\StarRating",
-    "\\src\\hooks",
+    "\\src\\components\\card",
+    "\\src\\components\\Cart",
     "\\src\\pages",
-    "\\src\\pages\\Carrinho"
+    "\\src\\pages\\Admin",
+    "\\src\\pages\\Admin\\Restautante",
+    "\\src\\pages\\Cardapio",
+    "\\src\\pages\\HistoricoOrdem"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\pages\\Pequisa\\index.tsx",
   "PreviewInSolutionExplorer": false
 }

@@ -16,7 +16,7 @@ const Cardapio = () => {
     const navigate = useNavigate();
     const [order, setOrder] = useState<Order>({
         orderItemDto: [], total: 0, status: 1,restaurantId: 0, userId: 0 });
-    const API_URL = 'https://localhost:7260';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
     const [restaurantes, setRestaurantes] = useState<IFood[]>([])
     const token = localStorage.getItem('token');
     const [isModalOpen, setIsModalOpen] = useState(false);

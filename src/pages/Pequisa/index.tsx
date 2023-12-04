@@ -12,7 +12,7 @@ const Pesquisa: React.FC = () => {
     const [orders, setOrders] = useState<Order[]>([]);
     const [userId, setUserId] = useState(0);
     const [message, setMessage] = useState("");
-    const API_URL = 'https://localhost:7260';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
 
     useEffect(() => {
 

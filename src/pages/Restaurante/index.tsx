@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Restaurant() {
 
-    const API_URL = 'https://localhost:7260';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
     const [restaurantes, setRestaurantes] = useState<IRestaurant[]>([])
 
     useEffect(() => {

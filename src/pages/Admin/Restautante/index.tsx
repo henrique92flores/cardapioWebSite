@@ -5,7 +5,7 @@ import { Link, useNavigate} from "react-router-dom";
 import { IRestaurant } from "../../../components/interface/IRestaurant";
 function AdminRestaurante() {
     //const parametros = useParams()
-    const API_URL = 'https://localhost:7260';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
     const [restaurants, setRestaurants] = useState<IRestaurant[]>([])
     const navigate = useNavigate();
 

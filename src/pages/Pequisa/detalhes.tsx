@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Order from '../../components/interface/IOrder';
 import './detalhes.css'
 import { IRestaurant } from '../../components/interface/IRestaurant';
-const API_URL = 'https://localhost:7260';
+const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
 
 
 const Detalhes = () => {

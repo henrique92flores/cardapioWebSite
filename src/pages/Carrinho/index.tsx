@@ -42,7 +42,7 @@ function Carrinho() {
     const [selectedTag, setSelectedTag] = useState<Tags | undefined>(undefined);
     const [data, setData] = useState('');
     const [order, setOrder] = useState<Order>({ orderItemDto: [], total: 0, status: 1, paymentType: 0, numeroCartao: 0, nomeCartao: "", restaurantId:0, userId:0 });
-    const API_URL = 'https://localhost:7260';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);

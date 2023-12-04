@@ -4,7 +4,7 @@ import CampoDigitacao from '../../../components/CampoDigitacao';
 import { IRestaurant } from '../../../components/interface/IRestaurant';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const API_URL = 'https://localhost:7260';
+const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
 
 function AtualizarRestaurante() {
     const parametros = useParams()
