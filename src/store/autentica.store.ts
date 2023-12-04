@@ -22,12 +22,21 @@ class AutenticaStore {
         });
 
         autorun(() => {
-        const dadosAutenticacao = localStorage.getItem('autenticacao');
-        if (dadosAutenticacao) {
-            const { autenticado, tipoUser } = JSON.parse(dadosAutenticacao);
-            this.estaAutenticado = autenticado;
-            this.usuario.tipoUser = tipoUser;
-        }
+            const dadosAutenticacao = localStorage.getItem('autenticacao');
+            const token = localStorage.getItem('token');
+            if (dadosAutenticacao) {
+                if (token != null) {
+                    const { autenticado, tipoUser } = JSON.parse(dadosAutenticacao);
+                    this.estaAutenticado = autenticado;
+                    this.usuario.tipoUser = tipoUser;
+                }
+                else {
+                    this.estaAutenticado = false;
+                }
+            }
+            else {
+                this.estaAutenticado = false;
+            }
             if (this.estaAutenticado) {
                 console.log("Usuário autenticado:", this.usuario.email);
                 console.log("tipo user no autentica: ", this.usuario.tipoUser)

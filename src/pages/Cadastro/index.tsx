@@ -43,7 +43,7 @@ export default function Cadastro() {
     const [complemento, setComplemento] = useState('');
     const [estado, setEstado] = useState('');
     const [tipocliente, setTipocliente] = useState(0);
-    const API_URL = 'https://restaurante20231128222416.azurewebsites.net/Restaurante20231128222416';
+    const API_URL = 'https://restaurante20231128222416.azurewebsites.net';
     const navigate = useNavigate();
 
 
