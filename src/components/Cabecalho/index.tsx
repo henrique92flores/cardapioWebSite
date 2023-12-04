@@ -4,6 +4,7 @@ import pesquisa from './assets/pesquisa.png';
 import perfil from './assets/perfil.png';
 import autenticaStore from '../../store/autentica.store';
 import { SetStateAction, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CabecalhoEstilizado = styled.header`
     display:flex;
@@ -18,17 +19,6 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-grow: .1;
-`
-
-const LinkEstilizado = styled.a`
- color: var(--azul-escuro);
- font-weight: 700;
-`
-
-const LinkEstilizadoDeslogado = styled(LinkEstilizado)`
-font-weight: 400;
-text-decoration: none;
-color: var(--azul-escuro)
 `
 
 
@@ -104,23 +94,23 @@ function Cabecalho() {
                 {isAutenticado
                     ? <>{userTipo>1
                         ? <>
-                            <LinkEstilizado href="/AdminRestaurante" >Adiministrativo</LinkEstilizado>
-                            <LinkEstilizado href="/historico" >Historico de Vendas</LinkEstilizado>
+                            <p><Link to="/AdminRestaurante" >Adiministrativo</Link></p>
+                            <p><Link to="/historico" >Historico de Vendas</Link></p>
                         </>
                         : <>
                         </>
                     }
-                        <LinkEstilizado href="/pesquisa" >Historico de Pedidos</LinkEstilizado>
-                        <LinkEstilizado href="/restaurant" >Restaurantes</LinkEstilizado>
-                        <LinkEstilizado href="/home" >Home</LinkEstilizado>
-                        <LinkEstilizado href="/Carrinho" >Carrinho</LinkEstilizado>
+                        <p><Link to="/pesquisa" >Historico de Pedidos</Link></p>
+                        <p><Link to="/restaurant" >Restaurantes</Link></p>
+                        <p><Link to="/home" >Home</Link></p>
+                        <p><Link to="/Carrinho" >Carrinho</Link></p>
                         <img src={perfil} alt="imagem de perfil do usuário" />
-                        <LinkEstilizado href="/" onClick={handleLogout}>Sair</LinkEstilizado>
+                        <p><Link to="/" onClick={handleLogout}>Sair</Link></p>
                     </>
                     : <>
-                        <LinkEstilizadoDeslogado href="/home" >Home</LinkEstilizadoDeslogado>
-                        <LinkEstilizadoDeslogado href="/sobre" >Sobre</LinkEstilizadoDeslogado>
-                        <LinkEstilizadoDeslogado href="/cadastro">Cadastre-se</LinkEstilizadoDeslogado>
+                        <p><Link to="/home" >Home</Link></p>
+                        <p><Link to="/sobre" >Sobre</Link></p>
+                        <p><Link to="/cadastro">Cadastre-se</Link></p>
                         <ContainerPesquisa>
                             <InputCustomizado type="text" placeholder='Digite sua busca' />
                             <SpanCustomizado />
